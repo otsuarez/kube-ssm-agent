@@ -47,9 +47,6 @@ spec:
           mountPath: /etc/machine-id
         - name: etc-sudoers
           mountPath: /etc/sudoers.d
-        # For debugging .env files produced by eksctl
-        - name: etc-eksctl
-          mountPath: /etc/eksctl
       volumes:
       # for systemctl to systemd access
       - name: dbus
@@ -95,9 +92,4 @@ spec:
       - name: etc-sudoers
         hostPath:
           path: /etc/sudoers.d
-          type: Directory
-      # For debugging .env files produced by eksctl
-      - name: etc-eksctl
-        hostPath:
-          path: /etc/eksctl
           type: Directory
